@@ -1,0 +1,2585 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/12/2024 9:40:52 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9G7EMAF"
+  DTS:CreatorName="DESKTOP-9G7EMAF\Lenovo"
+  DTS:DTSID="{48BAFCE6-1346-4F39-9E70-F4B7EDE4330F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{CF1B9266-5C62-4172-A0DF-798BC4A64EAD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Error Funding Dates Output]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6C446CAA-055F-4A7B-A415-8768B846C8F0}"
+      DTS:ObjectName="Error Funding Dates Output">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Lenovo\Desktop\SSIS Projects\SSIS Resources\Invalid funding Dates.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="permalink"
+              DTS:DTSID="{679FFCD0-F2CF-4EC7-AB84-B45AB9CD2693}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{C9CEF311-5A7E-4FE5-A6D3-7041892F71FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="homepage_url"
+              DTS:DTSID="{F7CAB14E-934B-497F-BF0F-F51DFB89919A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category_list"
+              DTS:DTSID="{7A8C7B1E-231C-4228-86D7-3239E6891D82}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="funding_total_usd"
+              DTS:DTSID="{C8C966F8-56B9-4B32-A8AD-B7E56FA871E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{C0001CAB-B16A-499B-9198-DFCC8DCF9091}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country_code"
+              DTS:DTSID="{C2586218-4EA5-40C7-9737-E9C9B509BCEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state_code"
+              DTS:DTSID="{880B7EE1-30CC-4F26-AAC4-DF097DB0E2B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{F9C4E749-4C2B-49F7-9DAC-C2EBF51191D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{C08A702D-4E5C-4BF9-8A60-317E9E5A4229}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="funding_rounds"
+              DTS:DTSID="{4D4934C7-AAC5-4ED0-8124-200C9CDF9170}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="founded_at"
+              DTS:DTSID="{A4385726-E5DA-46F6-8804-CEC00A07E6B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_funding_at"
+              DTS:DTSID="{CE5DCFA5-957A-4A65-89A4-EB133F8308A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_funding_at"
+              DTS:DTSID="{7DF9C8B6-7476-4FEE-9791-D9CEC93EF4E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{0D5DA9EC-4F64-45D2-8719-48134B9CB21C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{55EB03EB-43F5-4FEA-A789-9CECD699573F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Error Source Output File]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{16864A3A-BAFF-4597-AC03-BB8F03380310}"
+      DTS:ObjectName="Error Source Output File">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Lenovo\Desktop\SSIS Projects\SSIS Resources\err_source_output_startup.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Colonne de sortie d'erreur de source de fichier plat"
+              DTS:DTSID="{954599D9-6AC9-4BA3-BD7A-6A6081F66B0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{01C9E57F-41F3-4ED3-8326-282E3F8BA35E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{54B4C406-23A1-40B5-BBA1-AC70A803C6FF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.StartUp_Performance]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{431353EB-60DD-4C7D-BE6F-5CF0ECACBCC4}"
+      DTS:ObjectName="localhost.StartUp_Performance">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=StartUp_Performance;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{431353EB-60DD-4C7D-BE6F-5CF0ECACBCC4}localhost.StartUp_Performance;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Source File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BCF0DE5A-155E-4E4D-B311-4F400C321E57}"
+      DTS:ObjectName="Source File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Lenovo\Desktop\SSIS Projects\SSIS Resources\big_startup_secsees_dataset.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="permalink"
+              DTS:DTSID="{70B5CDFF-2823-438F-AA9C-D6A98D730A96}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{3C6F13A2-DC82-405B-B4C7-129FE23424C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="homepage_url"
+              DTS:DTSID="{7F1FBCAB-219A-4797-B69C-55D1AE32FE92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category_list"
+              DTS:DTSID="{30374FE2-0CBC-4C9D-885E-950B32A5DEA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="funding_total_usd"
+              DTS:DTSID="{4BBA8C89-E0BE-43D2-94E1-80324813246F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{01B5B9B1-A042-42D0-AAC3-FEA279F24208}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country_code"
+              DTS:DTSID="{6CF94375-9144-4900-B439-3A535367D253}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state_code"
+              DTS:DTSID="{46164DEB-A98B-40ED-9097-83281F16F843}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{CB2BDAD0-DE24-4A8C-A8BF-274934241533}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{582CE1E7-FC74-4F4D-B113-6CBE25E6621B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="funding_rounds"
+              DTS:DTSID="{D9D7939F-22B4-458D-BD69-B26FC234DB05}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="founded_at"
+              DTS:DTSID="{35CBFAE4-41DC-4DDA-A25A-555BA29B5388}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_funding_at"
+              DTS:DTSID="{8531F566-8EE0-488E-998B-0B7E99C919A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_funding_at"
+              DTS:DTSID="{1E6BE7BD-2B4B-4BC1-B80E-CB526E2C3A74}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETL StartUps"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{CDE26D2A-4CB1-4EE5-9563-306ABADC9C3B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL StartUps"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL StartUps\Error Dates Output"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Error Dates Output"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[invalid_dates]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL StartUps\Error Dates Output.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.StartUp_Performance]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.StartUp_Performance]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[permalink]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="permalink"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[permalink]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[permalink]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="name"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[name]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[name]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[homepage_url]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="homepage_url"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[homepage_url]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[homepage_url]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[category_list]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="category_list"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[category_list]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[category_list]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[funding_total_usd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="funding_total_usd"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[funding_total_usd]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_total_usd]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[status]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[status]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[country_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="country_code"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[country_code]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[country_code]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[state_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="state_code"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[state_code]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[state_code]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[region]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[region]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[city]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[city]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[funding_rounds]"
+                      cachedDataType="i4"
+                      cachedName="funding_rounds"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[funding_rounds]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_rounds]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[first_funding_at]"
+                      cachedDataType="date"
+                      cachedName="first_funding_at"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[first_funding_at]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[first_funding_at]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[last_funding_at]"
+                      cachedDataType="date"
+                      cachedName="last_funding_at"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[last_funding_at]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[last_funding_at]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].Columns[founded_at]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="founded_at"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[funded_at]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[founded_at]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[permalink]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="permalink" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[homepage_url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="homepage_url" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[category_list]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="category_list" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[funding_total_usd]"
+                      dataType="r8"
+                      name="funding_total_usd" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="country_code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[state_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="state_code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[funding_rounds]"
+                      dataType="i4"
+                      name="funding_rounds" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[funded_at]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="funded_at" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[first_funding_at]"
+                      dataType="dbDate"
+                      name="first_funding_at" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB].ExternalColumns[last_funding_at]"
+                      dataType="dbDate"
+                      name="last_funding_at" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL StartUps\Error Dates Output.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\Error Dates Output.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL StartUps\Error Dates Output.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\Error Dates Output.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL StartUps\Error Source Output"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destination de fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Destination de fichier plat"
+              localeId="1036"
+              name="Error Source Output"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les données remplaceront ou seront ajoutées au fichier de destination."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Spécifie le texte à enregistrer sur le fichier de destination avant d'enregistrer des données."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quand le qualificateur de texte est activé, spécifie si le qualificateur de texte dans les données écrites dans le fichier de destination va être échappé ou non."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL StartUps\Error Source Output.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Error Source Output File]"
+                  connectionManagerRefId="Package.ConnectionManagers[Error Source Output File]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat]"
+                  hasSideEffects="true"
+                  name="Entrée de destination de fichier plat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Colonne de sortie d'erreur de source de fichier plat"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].ExternalColumns[Colonne de sortie d'erreur de source de fichier plat]"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].ExternalColumns[ErrorCode]"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].ExternalColumns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\ETL StartUps\Handle NULL Values"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Handle NULL Values"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée].Columns[homepage_url]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="homepage_url"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[homepage_url]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[homepage_url]}) ? "No URL" : #{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[homepage_url]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(homepage_url) ? "No URL" : homepage_url</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée].Columns[category_list]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="category_list"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[category_list]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[category_list]}) ? "Not Specified" : #{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[category_list]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(category_list) ? "Not Specified" : category_list</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée].Columns[country_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="country_code"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[country_code]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[country_code]}) ? "UNK" : #{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[country_code]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(country_code) ? "UNK" : country_code</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée].Columns[state_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="state_code"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[state_code]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[state_code]}) ? "NA" : #{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[state_code]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(state_code) ? "NA" : state_code</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="region"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[region]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[region]}) ? "Unknown" : #{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[region]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(region) ? "Unknown" : region</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="city"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[city]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[city]}) ? "Unknown" : #{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[city]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(city) ? "Unknown" : city</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée].Columns[funding_total_usd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="funding_total_usd"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_total_usd]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_total_usd]} == "-" ? "0" : #{Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_total_usd]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">funding_total_usd == "-" ? "0" : funding_total_usd</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL StartUps\Handle NULL Values.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL StartUps\Handle NULL Values.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\Handle NULL Values.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL StartUps\Handle NULL Values.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\Handle NULL Values.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL StartUps\Remove StartUp Duplicates"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Trier;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Trie les données d'entrée en ordre croissant ou décroissant lorsque le tri ne peut pas être effectué à la source. Par exemple, triez les données de vente par 'id de client' avant leur enregistrement dans un fichier plat et leur diffusion dans un autre service. Remarque : nous ne recommandons pas cette transformation dans le cas de flux de données volumineux."
+              name="Remove StartUp Duplicates"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si la transformation de tri supprime les lignes comportant des valeurs de tri en double."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre maximal de threads à utiliser pour le tri."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri]"
+                  name="Entrée de tri">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[permalink]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="permalink"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[permalink]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="name"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[homepage_url]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="homepage_url"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[homepage_url]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[category_list]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="category_list"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[category_list]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[funding_total_usd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="funding_total_usd"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[funding_total_usd]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="status"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[status]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[country_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="country_code"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[country_code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[state_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="state_code"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[state_code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="region"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="city"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[city]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[funding_rounds]"
+                      cachedDataType="i4"
+                      cachedName="funding_rounds"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[funding_rounds]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[founded_at]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="founded_at"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[founded_at]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[first_funding_at]"
+                      cachedDataType="date"
+                      cachedName="first_funding_at"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[first_funding_at]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri].Columns[last_funding_at]"
+                      cachedDataType="date"
+                      cachedName="last_funding_at"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[last_funding_at]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri]"
+                  isSorted="true"
+                  name="Sortie de tri">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[permalink]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[permalink]"
+                      name="permalink">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[permalink]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[name]"
+                      name="name"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[homepage_url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[homepage_url]"
+                      name="homepage_url">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[homepage_url]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[category_list]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[category_list]"
+                      name="category_list">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[category_list]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_total_usd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_total_usd]"
+                      name="funding_total_usd">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[funding_total_usd]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[status]"
+                      name="status">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[status]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[country_code]"
+                      name="country_code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[country_code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[state_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[state_code]"
+                      name="state_code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[state_code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[city]"
+                      name="city">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[city]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_rounds]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_rounds]"
+                      name="funding_rounds">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[funding_rounds]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[founded_at]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[founded_at]"
+                      name="founded_at">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[founded_at]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[first_funding_at]"
+                      dataType="date"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[first_funding_at]"
+                      name="first_funding_at">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[first_funding_at]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[last_funding_at]"
+                      dataType="date"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[last_funding_at]"
+                      name="last_funding_at">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[last_funding_at]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL StartUps\Source File CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1036"
+              name="Source File CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL StartUps\Source File CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Source File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Source File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[permalink]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[permalink]"
+                      length="200"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[permalink]"
+                      name="permalink"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[name]"
+                      length="100"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[homepage_url]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[homepage_url]"
+                      length="200"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[homepage_url]"
+                      name="homepage_url"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[category_list]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[category_list]"
+                      length="50"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[category_list]"
+                      name="category_list"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[funding_total_usd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[funding_total_usd]"
+                      length="50"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[funding_total_usd]"
+                      name="funding_total_usd"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[status]"
+                      length="50"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[country_code]"
+                      length="3"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[country_code]"
+                      name="country_code"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[state_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[state_code]"
+                      length="2"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[state_code]"
+                      name="state_code"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[region]"
+                      length="100"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[city]"
+                      length="100"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[funding_rounds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[funding_rounds]"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[funding_rounds]"
+                      name="funding_rounds"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[founded_at]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[founded_at]"
+                      length="50"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[founded_at]"
+                      name="founded_at"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[first_funding_at]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[first_funding_at]"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[first_funding_at]"
+                      name="first_funding_at"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[last_funding_at]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[last_funding_at]"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].Columns[last_funding_at]"
+                      name="last_funding_at"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[permalink]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="permalink" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[homepage_url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="homepage_url" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[category_list]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="category_list" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[funding_total_usd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="funding_total_usd" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="country_code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[state_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="state_code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[funding_rounds]"
+                      dataType="i4"
+                      name="funding_rounds" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[founded_at]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="founded_at" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[first_funding_at]"
+                      dataType="date"
+                      name="first_funding_at" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat].ExternalColumns[last_funding_at]"
+                      dataType="date"
+                      name="last_funding_at" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL StartUps\StartUp Records OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="StartUp Records OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[startup_records]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL StartUps\StartUp Records OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.StartUp_Performance]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.StartUp_Performance]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[permalink]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="permalink"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[permalink]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[permalink]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="name"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[name]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[name]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[homepage_url]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="homepage_url"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[homepage_url]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[homepage_url]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[category_list]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="category_list"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[category_list]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[category_list]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[status]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[country_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="country_code"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[country_code]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[country_code]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[state_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="state_code"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[state_code]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[state_code]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[region]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[region]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[city]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[city]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[funding_rounds]"
+                      cachedDataType="i4"
+                      cachedName="funding_rounds"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[funding_rounds]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_rounds]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[first_funding_at]"
+                      cachedDataType="date"
+                      cachedName="first_funding_at"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[first_funding_at]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[first_funding_at]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[last_funding_at]"
+                      cachedDataType="date"
+                      cachedName="last_funding_at"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[last_funding_at]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[last_funding_at]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[founded_at]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="founded_at"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[funded_at]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[founded_at]" />
+                    <inputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].Columns[funding_total_usd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="funding_total_usd"
+                      externalMetadataColumnId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[funding_total_usd]"
+                      lineageId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri].Columns[funding_total_usd]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[permalink]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="permalink" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[homepage_url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="homepage_url" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[category_list]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="category_list" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[funding_total_usd]"
+                      dataType="r8"
+                      name="funding_total_usd" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="country_code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[state_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="state_code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[funding_rounds]"
+                      dataType="i4"
+                      name="funding_rounds" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[funded_at]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="funded_at" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[first_funding_at]"
+                      dataType="dbDate"
+                      name="first_funding_at" />
+                    <externalMetadataColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[last_funding_at]"
+                      dataType="dbDate"
+                      name="last_funding_at" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL StartUps\StartUp Records OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\StartUp Records OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL StartUps\StartUp Records OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL StartUps\StartUp Records OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL StartUps.Paths[Sortie d'erreur de colonne dérivée]"
+              endId="Package\ETL StartUps\Error Dates Output.Inputs[Entrée de destination OLE DB]"
+              name="Sortie d'erreur de colonne dérivée"
+              startId="Package\ETL StartUps\Handle NULL Values.Outputs[Sortie d'erreur de colonne dérivée]" />
+            <path
+              refId="Package\ETL StartUps.Paths[Sortie d'erreur de source de fichier plat]"
+              endId="Package\ETL StartUps\Error Source Output.Inputs[Entrée de destination de fichier plat]"
+              name="Sortie d'erreur de source de fichier plat"
+              startId="Package\ETL StartUps\Source File CSV.Outputs[Sortie d'erreur de source de fichier plat]" />
+            <path
+              refId="Package\ETL StartUps.Paths[Sortie de colonne dérivée]"
+              endId="Package\ETL StartUps\StartUp Records OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\ETL StartUps\Handle NULL Values.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\ETL StartUps.Paths[Sortie de source de fichier plat]"
+              endId="Package\ETL StartUps\Remove StartUp Duplicates.Inputs[Entrée de tri]"
+              name="Sortie de source de fichier plat"
+              startId="Package\ETL StartUps\Source File CSV.Outputs[Sortie de source de fichier plat]" />
+            <path
+              refId="Package\ETL StartUps.Paths[Sortie de tri]"
+              endId="Package\ETL StartUps\Handle NULL Values.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de tri"
+              startId="Package\ETL StartUps\Remove StartUp Duplicates.Outputs[Sortie de tri]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table err_dates_output"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{42160d23-1f61-4ae7-a6ae-0d234295b3da}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table err_dates_output"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{431353EB-60DD-4C7D-BE6F-5CF0ECACBCC4}"
+          SQLTask:SqlStatementSource=" truncate table err_dates_output;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table Startup_records"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{22B98F2D-786C-49F5-8F68-DCD392154EE3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table Startup_records"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{431353EB-60DD-4C7D-BE6F-5CF0ECACBCC4}"
+          SQLTask:SqlStatementSource=" truncate table startup_records;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{CBC95230-2CC0-44FD-AE6C-D6A486DF3948}"
+      DTS:From="Package\Truncate Table Startup_records"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\ETL StartUps" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{255DA29D-34CF-4247-B870-F164DE1611A3}"
+      DTS:From="Package\Truncate Table err_dates_output"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 2"
+      DTS:To="Package\ETL StartUps" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\ETL StartUps"
+          TopLeft="389,234" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Truncate Table err_dates_output"
+          TopLeft="555.5,65" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Truncate Table Startup_records"
+          TopLeft="11.5,62.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="135,104.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="292.25,129.5"
+              Start="0,0"
+              End="292.25,122">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.7742663656885" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,80.7742663656885"
+                    Point2="0,84.7742663656885"
+                    Point3="4,84.7742663656885" />
+                  <mssgle:LineSegment
+                    End="288.25,84.7742663656885" />
+                  <mssgle:CubicBezierSegment
+                    Point1="288.25,84.7742663656885"
+                    Point2="292.25,84.7742663656885"
+                    Point3="292.25,88.7742663656885" />
+                  <mssgle:LineSegment
+                    End="292.25,122" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="679,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.25,127"
+              Start="0,0"
+              End="-183.25,119.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.13769751693" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,79.13769751693"
+                    Point2="0,83.13769751693"
+                    Point3="-4,83.13769751693" />
+                  <mssgle:LineSegment
+                    End="-179.25,83.13769751693" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.25,83.13769751693"
+                    Point2="-183.25,83.13769751693"
+                    Point3="-183.25,87.13769751693" />
+                  <mssgle:LineSegment
+                    End="-183.25,119.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ETL StartUps">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\ETL StartUps\Source File CSV"
+          TopLeft="285.5,6.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\ETL StartUps\Error Source Output"
+          TopLeft="51.5,122.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\ETL StartUps\Handle NULL Values"
+          TopLeft="496,306" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\ETL StartUps\StartUp Records OLE DB"
+          TopLeft="481,512" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\ETL StartUps\Remove StartUp Duplicates"
+          TopLeft="453,142" />
+        <EdgeLayout
+          Id="Package\ETL StartUps.Paths[Sortie de tri]"
+          TopLeft="560.5,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.5,122"
+              Start="0,0"
+              End="26.5,114.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57"
+                    Point2="0,61"
+                    Point3="4,61" />
+                  <mssgle:LineSegment
+                    End="22.5,61" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,61"
+                    Point2="26.5,61"
+                    Point3="26.5,65" />
+                  <mssgle:LineSegment
+                    End="26.5,114.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL StartUps.Paths[Sortie de source de fichier plat]"
+          TopLeft="390.833333333333,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="169.666666666667,93.5"
+              Start="0,0"
+              End="169.666666666667,86">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.9554455445545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.9554455445545"
+                    Point2="0,37.9554455445545"
+                    Point3="4,37.9554455445545" />
+                  <mssgle:LineSegment
+                    End="165.666666666667,37.9554455445545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="165.666666666667,37.9554455445545"
+                    Point2="169.666666666667,37.9554455445545"
+                    Point3="169.666666666667,41.9554455445545" />
+                  <mssgle:LineSegment
+                    End="169.666666666667,86" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL StartUps.Paths[Sortie d'erreur de source de fichier plat]"
+          TopLeft="340.166666666667,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-200.166666666667,74"
+              Start="0,0"
+              End="-200.166666666667,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.039603960396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.039603960396"
+                    Point2="0,30.039603960396"
+                    Point3="-4,30.039603960396" />
+                  <mssgle:LineSegment
+                    End="-196.166666666667,30.039603960396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-196.166666666667,30.039603960396"
+                    Point2="-200.166666666667,30.039603960396"
+                    Point3="-200.166666666667,34.0396039603961" />
+                  <mssgle:LineSegment
+                    End="-200.166666666667,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-187.165384114584,35.039603960396,174.1641015625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\ETL StartUps\Error Dates Output"
+          TopLeft="159.5,329" />
+        <EdgeLayout
+          Id="Package\ETL StartUps.Paths[Sortie de colonne dérivée]"
+          TopLeft="584.75,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,164"
+              Start="0,0"
+              End="0,156.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,156.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL StartUps.Paths[Sortie d'erreur de colonne dérivée]"
+          TopLeft="496,327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-165.5,23"
+              Start="0,0"
+              End="-158,23">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-78.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.75,0"
+                    Point2="-82.75,0"
+                    Point3="-82.75,4" />
+                  <mssgle:LineSegment
+                    End="-82.75,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-82.75,19"
+                    Point2="-82.75,23"
+                    Point3="-86.75,23" />
+                  <mssgle:LineSegment
+                    End="-158,23" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-158.28201171875,-16.3349609375,151.0640234375,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL StartUps\StartUp Records OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

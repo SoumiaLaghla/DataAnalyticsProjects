@@ -1,0 +1,2183 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/10/2024 11:44:44 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9G7EMAF"
+  DTS:CreatorName="DESKTOP-9G7EMAF\Lenovo"
+  DTS:DTSID="{65A9CB19-4CE3-4291-880B-1193A4990E49}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="ETL Telecom"
+  DTS:PackageType="5"
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{676DEF62-21F3-4D6B-9D23-8D28F7556E99}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ETL_Telecom]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{93EA52AC-B83E-4367-956D-8E85E3324680}"
+      DTS:ObjectName="localhost.ETL_Telecom">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=ETL_Telecom;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-ETL Telecom-{93EA52AC-B83E-4367-956D-8E85E3324680}localhost.ETL_Telecom;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Source CSV File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{A29B9E2F-7E0C-47B0-BC27-BFAC0EF4E4AD}"
+      DTS:ObjectName="Source CSV File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::src_file_path]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Lenovo\Desktop\SSIS Projects\SSIS Resources\ETL-Telecom-SSIS-project\source_files\telecom_data.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{75DE80E8-BC61-4471-8FFD-DDA5CE19A1B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="9"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="imsi"
+              DTS:DTSID="{BA59BFF1-2555-46E7-8B60-53FF67E6ABF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="14"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="imei"
+              DTS:DTSID="{B7A53107-7D3A-4488-9B9B-B217A96E421C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cell"
+              DTS:DTSID="{D7360513-E230-4045-84DC-AB6A85F9AED0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="lac"
+              DTS:DTSID="{C794821C-77FD-4DF6-B50E-7C50C805A673}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_type"
+              DTS:DTSID="{E63C81E0-2300-489C-977B-8FEA1C1BE54C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_ts"
+              DTS:DTSID="{F5880317-316C-4727-AD69-52658587B8C8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{96C6CB75-D036-4936-83B9-E7400D297A3F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_dest_archieve">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Lenovo\Desktop\SSIS Projects\SSIS Resources\ETL-Telecom-SSIS-project\output_files\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1FA906FE-4E4D-432E-B740-3588D59403C2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="move_or_copy">
+      <DTS:VariableValue
+        DTS:DataType="8">copy</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E538854F-E534-4C41-B81F-C4636B556920}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rc_dest_error">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{397573B5-EF3B-4A05-83FF-9EC1132DC73E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rc_extracted_error">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{94D94B15-9833-4D10-BE88-EFDC1D4A71E9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rc_extracted_processed">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E446C4FC-15D2-4C69-A892-CD133B13ECB1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rc_pre_insert">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2FEDAFB5-83AE-428A-9294-4207556E4005}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="src_file_path">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Lenovo\Desktop\SSIS Projects\SSIS Resources\ETL-Telecom-SSIS-project\source_files\telecom_data.csv</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table err_destination_output"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{0c60a1c4-a0c6-4cb4-aadf-c14110417513}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table err_destination_output"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{93EA52AC-B83E-4367-956D-8E85E3324680}"
+          SQLTask:SqlStatementSource="Truncate table dbo.err_destination_output;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table err_souce_output"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{290c997c-dc9e-4b57-82e4-bb448ca19499}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table err_souce_output"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{93EA52AC-B83E-4367-956D-8E85E3324680}"
+          SQLTask:SqlStatementSource="Truncate table dbo.err_source_output;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table fact_transaction"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{2C04EF07-56D1-4832-B998-9FA919BFF40F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table fact_transaction"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{93EA52AC-B83E-4367-956D-8E85E3324680}"
+          SQLTask:SqlStatementSource="Truncate table dbo.fact_transaction;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche de flux de données"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{917A31F3-14C3-432F-AE5E-7DC5EEC4866E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche de flux de données"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tâche de flux de données\Dest OLE DB Transactions"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Dest OLE DB Transactions"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[fact_transaction]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_Telecom]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_Telecom]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[imsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="imsi"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[imsi]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[imei]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="imei"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[imei]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[event_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="event_type"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[event_type]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_type]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[transaction_id]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[lac]"
+                      cachedDataType="i4"
+                      cachedName="lac"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[lac]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[lac]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[cell]"
+                      cachedDataType="i4"
+                      cachedName="cell"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[cell]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[cell]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[event_ts]"
+                      cachedDataType="date"
+                      cachedName="event_ts"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[event_ts]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_ts]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[subscriber_id]"
+                      cachedDataType="i4"
+                      cachedName="subscriber_id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[subscriber_id]"
+                      lineageId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance].Columns[subscriber_id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[TAC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="TAC"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[tac]"
+                      lineageId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée].Columns[TAC]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].Columns[SNR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="SNR"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[snr]"
+                      lineageId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée].Columns[SNR]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[transaction_id]"
+                      dataType="i4"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[imsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="imsi" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[subscriber_id]"
+                      dataType="i4"
+                      name="subscriber_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[tac]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="tac" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[snr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="snr" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[imei]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="imei" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[cell]"
+                      dataType="i4"
+                      name="cell" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[lac]"
+                      dataType="i4"
+                      name="lac" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[event_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="event_type" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[event_ts]"
+                      dataType="dbTimeStamp"
+                      name="event_ts" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB].ExternalColumns[audit_id]"
+                      dataType="i4"
+                      name="audit_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dest OLE DB Transactions.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dest OLE DB Transactions.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dest OLE DB Transactions.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[err_source_output]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_Telecom]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_Telecom]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Colonne de sortie d'erreur de source de fichier plat"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Flat File Source Error Output Column]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Flat File Source Error Output Column" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Error Transactions Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Error Transactions Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[err_destination_output]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Error Transactions Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_Telecom]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_Telecom]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[imsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="imsi"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[imsi]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[imei]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="imei"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[imei]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[cell]"
+                      cachedDataType="i4"
+                      cachedName="cell"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[cell]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[cell]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[lac]"
+                      cachedDataType="i4"
+                      cachedName="lac"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[lac]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[lac]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[event_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="event_type"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[event_type]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_type]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[event_ts]"
+                      cachedDataType="date"
+                      cachedName="event_ts"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[event_ts]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_ts]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Tâche de flux de données\Dest OLE DB Transactions.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Tâche de flux de données\Dest OLE DB Transactions.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[subscriber_id]"
+                      cachedDataType="i4"
+                      cachedName="subscriber_id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[subscriber_id]"
+                      lineageId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance].Columns[subscriber_id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[TAC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="TAC"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[tac]"
+                      lineageId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée].Columns[TAC]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].Columns[SNR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="SNR"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[snr]"
+                      lineageId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée].Columns[SNR]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[imsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="imsi" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[imei]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="imei" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[subscriber_id]"
+                      dataType="i4"
+                      name="subscriber_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[cell]"
+                      dataType="i4"
+                      name="cell" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[lac]"
+                      dataType="i4"
+                      name="lac" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[event_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="event_type" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[event_ts]"
+                      dataType="dbTimeStamp"
+                      name="event_ts" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[tac]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="tac" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[snr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="snr" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Error Transactions Destination.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Error Transactions Destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Error Transactions Destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Error Transactions Destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Flat  CSV Files BATCH"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1036"
+              name="Flat  CSV Files BATCH"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Source CSV File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Source CSV File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[id]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[imsi]"
+                      length="9"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]"
+                      name="imsi"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[imei]"
+                      length="14"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]"
+                      name="imei"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[cell]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[cell]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[cell]"
+                      name="cell"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[lac]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[lac]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[lac]"
+                      name="lac"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[event_type]"
+                      length="1"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_type]"
+                      name="event_type"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_ts]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[event_ts]"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_ts]"
+                      name="event_ts"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[imsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="imsi" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[imei]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="imei" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[cell]"
+                      dataType="i4"
+                      name="cell" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[lac]"
+                      dataType="i4"
+                      name="lac" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[event_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="event_type" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].ExternalColumns[event_ts]"
+                      dataType="date"
+                      name="event_ts" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Handle Blank Values"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Handle Blank Values"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée].Columns[imsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="imsi"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_STR,9,1252)(#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]} == "" ? NULL(DT_WSTR,9) : #{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,9,1252)(imsi == "" ? NULL(DT_WSTR,9) : imsi)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée].Columns[imei]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="imei"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_STR,14,1252)(#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]} == "" ? NULL(DT_WSTR,14) : #{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,14,1252)(imei == "" ? NULL(DT_WSTR,14) : imei)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée].Columns[cell]"
+                      cachedDataType="i4"
+                      cachedName="cell"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[cell]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_I4)(#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[cell]} == 0 ? NULL(DT_I4) : #{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[cell]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)(cell == 0 ? NULL(DT_I4) : cell)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée].Columns[lac]"
+                      cachedDataType="i4"
+                      cachedName="lac"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[lac]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_I4)(#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[lac]} == 0 ? NULL(DT_I4) : #{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[lac]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)(lac == 0 ? NULL(DT_I4) : lac)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée].Columns[event_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="event_type"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_type]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_STR,1,1252)(#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_type]} == "" ? NULL(DT_WSTR,1) : #{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_type]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,1,1252)(event_type == "" ? NULL(DT_WSTR,1) : event_type)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée].Columns[event_ts]"
+                      cachedDataType="date"
+                      cachedName="event_ts"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_ts]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_ts]}) ? NULL(DT_DATE) : (DT_DATE)#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[event_ts]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(event_ts) ? NULL(DT_DATE) : (DT_DATE)event_ts</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Handle Blank Values.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Handle Blank Values.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Handle Blank Values.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Handle Blank Values.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Handle Blank Values.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Handle Blank Values.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Lookup for subscriber_id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Lookup for subscriber_id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_imsi_reference]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_imsi_reference]) [refTable]
+where [refTable].[imsi] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="imsi" dataType="DT_STR" length="9" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="subscriber_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Lookup for subscriber_id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ETL_Telecom]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ETL_Telecom]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Lookup for subscriber_id.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Lookup for subscriber_id.Inputs[Entrée de recherche].Columns[imsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="imsi"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imsi]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">imsi</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Tâche de flux de données\Lookup for subscriber_id.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance].Columns[subscriber_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance].Columns[subscriber_id]"
+                      name="subscriber_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">subscriber_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Tâche de flux de données\Lookup for subscriber_id.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Tâche de flux de données\Lookup for subscriber_id.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Null subscriber id"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Null subscriber id"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Null subscriber id.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Null subscriber id.Inputs[Entrée de colonne dérivée].Columns[subscriber_id]"
+                      cachedDataType="i4"
+                      cachedName="subscriber_id"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance].Columns[subscriber_id]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance].Columns[subscriber_id]}) ? -99999 : #{Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance].Columns[subscriber_id]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(subscriber_id) ? -99999 : subscriber_id</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Null subscriber id.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\Null subscriber id.Inputs[Entrée de colonne dérivée]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Null subscriber id.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\Null subscriber id.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Null subscriber id.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Null subscriber id.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Null subscriber id.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Null subscriber id.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="TAC and  SNR  Column Derivation"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Inputs[Entrée de colonne dérivée].Columns[imei]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="imei"
+                      lineageId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée].Columns[TAC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="8"
+                      lineageId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée].Columns[TAC]"
+                      name="TAC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_STR,8,1252)(([ISNULL](#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]}) || [LEN](#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]}) &lt; 14) ? "-99999" : [SUBSTRING](#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]},1,8))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,8,1252)((ISNULL(imei) || LEN(imei) &lt; 14) ? "-99999" : SUBSTRING(imei,1,8))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée].Columns[SNR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée].Columns[SNR]"
+                      name="SNR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_STR,6,1252)(([ISNULL](#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]}) || [LEN](#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]}) &lt; 14) ? "-99999" : [SUBSTRING](#{Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat].Columns[imei]},9,14))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,6,1252)((ISNULL(imei) || LEN(imei) &lt; 14) ? "-99999" : SUBSTRING(imei,9,14))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie d'erreur de destination OLE DB]"
+              endId="Package\Tâche de flux de données\Error Transactions Destination.Inputs[Entrée de destination OLE DB]"
+              name="Sortie d'erreur de destination OLE DB"
+              startId="Package\Tâche de flux de données\Dest OLE DB Transactions.Outputs[Sortie d'erreur de destination OLE DB]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie d'erreur de source de fichier plat]"
+              endId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie d'erreur de source de fichier plat"
+              startId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie d'erreur de source de fichier plat]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée]"
+              endId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Tâche de flux de données\Null subscriber id.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée1]"
+              endId="Package\Tâche de flux de données\Lookup for subscriber_id.Inputs[Entrée de recherche]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Tâche de flux de données\Handle Blank Values.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée2]"
+              endId="Package\Tâche de flux de données\Dest OLE DB Transactions.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Tâche de flux de données\TAC and  SNR  Column Derivation.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Tâche de flux de données\Null subscriber id.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Tâche de flux de données\Lookup for subscriber_id.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de source de fichier plat]"
+              endId="Package\Tâche de flux de données\Handle Blank Values.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Tâche de flux de données\Flat  CSV Files BATCH.Outputs[Sortie de source de fichier plat]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{D017D121-C1E0-4A7B-9FA9-99EF3C163917}"
+      DTS:From="Package\Truncate Table fact_transaction"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Tâche de flux de données" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{492A00D9-7383-49B5-B0CD-A75F3DF00768}"
+      DTS:From="Package\Truncate Table err_destination_output"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 1"
+      DTS:To="Package\Tâche de flux de données" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F05D81D-C981-4CBD-A834-436AEF21B1C6}"
+      DTS:From="Package\Truncate Table err_souce_output"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 2"
+      DTS:To="Package\Tâche de flux de données" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Tâche de flux de données"
+          TopLeft="328.361111111111,241.777777777778" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Truncate Table fact_transaction"
+          TopLeft="292.166666666667,41.0555555555556" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="408.666666666667,83.0555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.0277777777777,158.722222222222"
+              Start="0,0"
+              End="55.0277777777777,151.222222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.4958050984189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,90.4958050984189"
+                    Point2="0,94.4958050984189"
+                    Point3="4,94.4958050984189" />
+                  <mssgle:LineSegment
+                    End="51.0277777777777,94.4958050984189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.0277777777777,94.4958050984189"
+                    Point2="55.0277777777777,94.4958050984189"
+                    Point3="55.0277777777777,98.4958050984189" />
+                  <mssgle:LineSegment
+                    End="55.0277777777777,151.222222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="265,42"
+          Id="Package\Truncate Table err_destination_output"
+          TopLeft="40,104.777777777778" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Truncate Table err_souce_output"
+          TopLeft="547.777777777778,108.222222222222" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="172.5,146.777777777778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="225.527777777778,95.0000000000001"
+              Start="0,0"
+              End="225.527777777778,87.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5585672797677" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.5585672797677"
+                    Point2="0,56.5585672797677"
+                    Point3="4,56.5585672797677" />
+                  <mssgle:LineSegment
+                    End="221.527777777778,56.5585672797677" />
+                  <mssgle:CubicBezierSegment
+                    Point1="221.527777777778,56.5585672797677"
+                    Point2="225.527777777778,56.5585672797677"
+                    Point3="225.527777777778,60.5585672797677" />
+                  <mssgle:LineSegment
+                    End="225.527777777778,87.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="664.277777777778,150.222222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-184.166666666667,91.5555555555556"
+              Start="0,0"
+              End="-184.166666666667,84.0555555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.2532548599964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56.2532548599964"
+                    Point2="0,60.2532548599964"
+                    Point3="-4,60.2532548599964" />
+                  <mssgle:LineSegment
+                    End="-180.166666666667,60.2532548599964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-180.166666666667,60.2532548599964"
+                    Point2="-184.166666666667,60.2532548599964"
+                    Point3="-184.166666666667,64.2532548599964" />
+                  <mssgle:LineSegment
+                    End="-184.166666666667,84.0555555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tâche de flux de données">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Tâche de flux de données\Destination OLE DB"
+          TopLeft="67,216.75" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Tâche de flux de données\Dest OLE DB Transactions"
+          TopLeft="334.75,476.25" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Tâche de flux de données\Flat  CSV Files BATCH"
+          TopLeft="330.5,10" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Tâche de flux de données\Handle Blank Values"
+          TopLeft="376.25,132.5" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Tâche de flux de données\Error Transactions Destination"
+          TopLeft="339.5,658" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Tâche de flux de données\Null subscriber id"
+          TopLeft="594.25,293" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Tâche de flux de données\Lookup for subscriber_id"
+          TopLeft="346.25,238.75" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Tâche de flux de données\TAC and  SNR  Column Derivation"
+          TopLeft="328,343" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée]"
+          TopLeft="594.25,319.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-142.25,23.3333333333333"
+              Start="0,0"
+              End="-142.25,15.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-138.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-138.25,0"
+                    Point2="-142.25,0"
+                    Point3="-142.25,4" />
+                  <mssgle:LineSegment
+                    End="-142.25,15.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="545.25,259.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49,48.5833333333334"
+              Start="0,0"
+              End="41.5,48.5833333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.3211009174312,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.3211009174312,0"
+                    Point2="28.3211009174312,0"
+                    Point3="28.3211009174312,4" />
+                  <mssgle:LineSegment
+                    End="28.3211009174312,44.5833333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.3211009174312,44.5833333333334"
+                    Point2="28.3211009174312,48.5833333333334"
+                    Point3="32.3211009174312,48.5833333333334" />
+                  <mssgle:LineSegment
+                    End="41.5,48.5833333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-63.3559108013188,-17.609375,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée1]"
+          TopLeft="466.75,174.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21,64.25"
+              Start="0,0"
+              End="-21,56.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.125"
+                    Point2="0,32.125"
+                    Point3="-4,32.125" />
+                  <mssgle:LineSegment
+                    End="-17,32.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17,32.125"
+                    Point2="-21,32.125"
+                    Point3="-21,36.125" />
+                  <mssgle:LineSegment
+                    End="-21,56.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de source de fichier plat]"
+          TopLeft="426.5,52">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.25,80.5"
+              Start="0,0"
+              End="40.25,73">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.25"
+                    Point2="0,40.25"
+                    Point3="4,40.25" />
+                  <mssgle:LineSegment
+                    End="36.25,40.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.25,40.25"
+                    Point2="40.25,40.25"
+                    Point3="40.25,44.25" />
+                  <mssgle:LineSegment
+                    End="40.25,73" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie d'erreur de source de fichier plat]"
+          TopLeft="395.833333333333,52">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-240.333333333333,164.75"
+              Start="0,0"
+              End="-240.333333333333,157.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.7169421487603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.7169421487603"
+                    Point2="0,66.7169421487603"
+                    Point3="-4,66.7169421487603" />
+                  <mssgle:LineSegment
+                    End="-236.333333333333,66.7169421487603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-236.333333333333,66.7169421487603"
+                    Point2="-240.333333333333,66.7169421487603"
+                    Point3="-240.333333333333,70.7169421487603" />
+                  <mssgle:LineSegment
+                    End="-240.333333333333,157.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-207.248717447917,71.7169421487603,174.1641015625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée2]"
+          TopLeft="452,385">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.75,91.25"
+              Start="0,0"
+              End="-11.75,83.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.625"
+                    Point2="0,45.625"
+                    Point3="-4,45.625" />
+                  <mssgle:LineSegment
+                    End="-7.75,45.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.75,45.625"
+                    Point2="-11.75,45.625"
+                    Point3="-11.75,49.625" />
+                  <mssgle:LineSegment
+                    End="-11.75,83.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie d'erreur de destination OLE DB]"
+          TopLeft="440.25,518.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.75,139.75"
+              Start="0,0"
+              End="12.75,132.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.875" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65.875"
+                    Point2="0,69.875"
+                    Point3="4,69.875" />
+                  <mssgle:LineSegment
+                    End="8.75,69.875" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.75,69.875"
+                    Point2="12.75,69.875"
+                    Point3="12.75,73.875" />
+                  <mssgle:LineSegment
+                    End="12.75,132.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-76.906484375,74.875,166.56296875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Dest OLE DB Transactions">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Error Transactions Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Lookup for subscriber_id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_imsi_reference]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

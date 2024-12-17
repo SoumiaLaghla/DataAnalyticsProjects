@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lenovo\\Desktop\\SSIS Projects\\financial DW\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8BCEC012-9351-4A97-94E7-909F2F1A4C9D}|financial DW\\financial DW.dtproj|C:\\Users\\Lenovo\\Desktop\\SSIS Projects\\financial DW\\financial DW\\Financial Transactions.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{8BCEC012-9351-4A97-94E7-909F2F1A4C9D}|financial DW\\financial DW.dtproj|solutionrelative:financial DW\\Financial Transactions.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BCEC012-9351-4A97-94E7-909F2F1A4C9D}|financial DW\\financial DW.dtproj|C:\\Users\\Lenovo\\Desktop\\SSIS Projects\\financial DW\\financial DW\\Project.params||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{8BCEC012-9351-4A97-94E7-909F2F1A4C9D}|financial DW\\financial DW.dtproj|solutionrelative:financial DW\\Project.params||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Project.params [Conception]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Desktop\\SSIS Projects\\financial DW\\financial DW\\Project.params",
+              "RelativeDocumentMoniker": "financial DW\\Project.params",
+              "ToolTip": "C:\\Users\\Lenovo\\Desktop\\SSIS Projects\\financial DW\\financial DW\\Project.params [Conception]",
+              "RelativeToolTip": "financial DW\\Project.params [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-08T13:42:50.31Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Financial Transactions.dtsx [Conception]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Desktop\\SSIS Projects\\financial DW\\financial DW\\Financial Transactions.dtsx",
+              "RelativeDocumentMoniker": "financial DW\\Financial Transactions.dtsx",
+              "ToolTip": "C:\\Users\\Lenovo\\Desktop\\SSIS Projects\\financial DW\\financial DW\\Financial Transactions.dtsx [Conception]",
+              "RelativeToolTip": "financial DW\\Financial Transactions.dtsx [Conception]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-12-03T19:59:57.821Z",
+              "EditorCaption": " [Conception]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
